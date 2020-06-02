@@ -1,6 +1,7 @@
 import math
 
 newDict = {}
+# читаем построчно лог и наполняем словарь событие:время
 with open('C:\\Tasks\\mtesrl_20150626_MD0000600002_stats.txt', 'r') as f:    
     for line in f:
         if line != '\n':
@@ -17,6 +18,7 @@ for v in newDict.values():
     v = v.sort()
 percintele = [0.5, 0.90, 0.99, 0.999]
 index = []
+# выполняем необходимые подсчеты
 for v in newDict.values():
     
     for p in percintele:
@@ -29,6 +31,7 @@ for v in newDict.values():
 
 i = 0
 
+# выводим результирующую  строку и таблицу
 for k, v in newDict.items():
     
     print(k, "min={}".format(v[0]), "50%={}".format(v[index[i]]), "90%={}".format(v[index[i+1]]),\
